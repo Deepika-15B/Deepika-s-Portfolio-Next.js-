@@ -24,24 +24,23 @@ Domain:
 ---
 
 ## Project Structure
+
+```text
 my-portfolio/
-│
 ├── app/
-│ ├── page.js # Main Home Page
-│ ├── components/
-│ │ ├── Navbar.js # Navigation Bar
-│ │ ├── Hero.js # Intro Section
-│ │ ├── About.js # About Me Section
-│ │ ├── Projects.js # Projects Section
-│ │ ├── Contact.js # Contact Section
-│
-├── public/ # Static assets (images, icons)
-│
-├── styles/ # Global styles (if any)
-│
-├── package.json # Project dependencies
-├── tailwind.config.js # Tailwind configuration
-├── README.md # Project documentation
+│   ├── page.js           # Main Home Page
+│   └── components/
+│       ├── Navbar.js     # Navigation Bar
+│       ├── Hero.js       # Intro Section
+│       ├── About.js      # About Me Section
+│       ├── Projects.js   # Projects Section
+│       └── Contact.js    # Contact Section
+├── public/               # Static assets (images, icons)
+├── styles/               # Global styles
+├── package.json          # Project dependencies
+├── tailwind.config.js    # Tailwind configuration
+└── README.md             # Project documentation
+
 ## Setup Instructions
 
 ### Prerequisites
