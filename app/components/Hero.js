@@ -3,7 +3,7 @@ import { SiLeetcode } from "react-icons/si";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-100 via-white to-blue-100 text-gray-900 px-6">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-100 via-white to-blue-100 text-gray-900">
 
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center">
 

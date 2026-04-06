@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id="about" className="bg-black text-white py-20 px-6">
+    <section id="about" className="bg-gray-50 text-gray-900 py-20 px-6">
 
       {/* Container */}
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
