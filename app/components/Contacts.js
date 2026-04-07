@@ -13,12 +13,12 @@ export default function Contact() {
         Contact Me
       </h2>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
         
-        {/* Left Side - Info */}
+        {/* Left Side */}
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-gray-800">
-            Get in Touch
+            Let’s Connect 
           </h3>
 
           <p className="text-gray-600">
@@ -48,32 +48,60 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Right Side - Form */}
-        <form className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm space-y-4">
+        {/* Right Side - Enhanced Form */}
+        <form className="relative bg-white/70 backdrop-blur-lg border border-white/30 rounded-2xl p-8 shadow-xl space-y-6">
           
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400"
-          />
+          {/* Name */}
+          <div className="relative">
+            <input
+              type="text"
+              required
+              className="peer w-full border border-gray-300 rounded-lg p-3 pt-5 bg-transparent focus:outline-none focus:ring-2 focus:ring-purple-400"
+            />
+            <label className="absolute left-3 top-2 text-gray-500 text-sm transition-all 
+              peer-focus:text-purple-600 peer-focus:top-1 peer-focus:text-xs
+              peer-valid:top-1 peer-valid:text-xs">
+              Your Name
+            </label>
+          </div>
 
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400"
-          />
+          {/* Email */}
+          <div className="relative">
+            <input
+              type="email"
+              required
+              className="peer w-full border border-gray-300 rounded-lg p-3 pt-5 bg-transparent focus:outline-none focus:ring-2 focus:ring-purple-400"
+            />
+            <label className="absolute left-3 top-2 text-gray-500 text-sm transition-all 
+              peer-focus:text-purple-600 peer-focus:top-1 peer-focus:text-xs
+              peer-valid:top-1 peer-valid:text-xs">
+              Your Email
+            </label>
+          </div>
 
-          <textarea
-            rows="4"
-            placeholder="Your Message"
-            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400"
-          ></textarea>
+          {/* Message */}
+          <div className="relative">
+            <textarea
+              rows="4"
+              required
+              className="peer w-full border border-gray-300 rounded-lg p-3 pt-5 bg-transparent focus:outline-none focus:ring-2 focus:ring-purple-400"
+            ></textarea>
+            <label className="absolute left-3 top-2 text-gray-500 text-sm transition-all 
+              peer-focus:text-purple-600 peer-focus:top-1 peer-focus:text-xs
+              peer-valid:top-1 peer-valid:text-xs">
+              Your Message
+            </label>
+          </div>
 
+          {/* Button */}
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white py-3 rounded-lg hover:opacity-90 transition"
+            className="w-full relative overflow-hidden bg-gradient-to-r from-purple-500 to-blue-500 text-white py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition duration-300 group"
           >
-            Send Message
+            <span className="relative z-10">Send Message</span>
+
+            {/* Glow Effect */}
+            <span className="absolute inset-0 bg-white opacity-10 group-hover:opacity-20 transition"></span>
           </button>
         </form>
       </div>
