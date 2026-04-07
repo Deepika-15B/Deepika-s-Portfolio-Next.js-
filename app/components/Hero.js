@@ -58,12 +58,7 @@ export default function Hero() {
             </div>
           </a>
 
-          <a href="mailto:deepikab.23it@kongu.edu">
-            <div className="w-14 h-14 bg-red-500 text-white rounded-full flex items-center justify-center hover:scale-110 hover:shadow-lg transition duration-300">
-              <FaEnvelope size={24} />
-            </div>
-          </a>
-
+       
           <a href="https://leetcode.com/u/deepika_0510/" target="_blank">
             <div className="w-14 h-14 bg-yellow-400 text-white rounded-full flex items-center justify-center hover:scale-110 hover:shadow-lg transition duration-300">
               <SiLeetcode size={24} />
