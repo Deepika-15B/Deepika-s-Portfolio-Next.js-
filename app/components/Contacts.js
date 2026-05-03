@@ -3,6 +3,40 @@
 import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Contact() {
+
+  // ✅ ADD THIS FUNCTION HERE
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      message: e.target.message.value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert("Message sent successfully!");
+        e.target.reset();
+      } else {
+        alert("Failed to send message");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong");
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -18,7 +52,7 @@ export default function Contact() {
         {/* Left Side */}
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-gray-800">
-            Let’s Connect 
+            Let’s Connect
           </h3>
 
           <p className="text-gray-600">
@@ -38,22 +72,27 @@ export default function Contact() {
 
             <p className="flex items-center gap-3">
               <FaLinkedin className="text-purple-600" />
-              https://www.linkedin.com/in/deepika0510
+              linkedin.com/in/deepika0510
             </p>
 
             <p className="flex items-center gap-3">
               <FaGithub className="text-purple-600" />
-              https://github.com/Deepika-15B
+              github.com/Deepika-15B
             </p>
           </div>
         </div>
 
-        {/* Right Side - Enhanced Form */}
-        <form className="relative bg-white/70 backdrop-blur-lg border border-white/30 rounded-2xl p-8 shadow-xl space-y-6">
+        {/* Right Side - Form */}
+        {/* ✅ CONNECT HANDLESUBMIT HERE */}
+        <form
+          onSubmit={handleSubmit}
+          className="relative bg-white/70 backdrop-blur-lg border border-white/30 rounded-2xl p-8 shadow-xl space-y-6"
+        >
           
           {/* Name */}
           <div className="relative">
             <input
+              name="name"   // ✅ IMPORTANT
               type="text"
               required
               className="peer w-full border border-gray-300 rounded-lg p-3 pt-5 bg-transparent focus:outline-none focus:ring-2 focus:ring-purple-400"
@@ -68,6 +107,7 @@ export default function Contact() {
           {/* Email */}
           <div className="relative">
             <input
+              name="email"   // ✅ IMPORTANT
               type="email"
               required
               className="peer w-full border border-gray-300 rounded-lg p-3 pt-5 bg-transparent focus:outline-none focus:ring-2 focus:ring-purple-400"
@@ -82,6 +122,7 @@ export default function Contact() {
           {/* Message */}
           <div className="relative">
             <textarea
+              name="message"   // ✅ IMPORTANT
               rows="4"
               required
               className="peer w-full border border-gray-300 rounded-lg p-3 pt-5 bg-transparent focus:outline-none focus:ring-2 focus:ring-purple-400"
@@ -99,8 +140,6 @@ export default function Contact() {
             className="w-full relative overflow-hidden bg-gradient-to-r from-purple-500 to-blue-500 text-white py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition duration-300 group"
           >
             <span className="relative z-10">Send Message</span>
-
-            {/* Glow Effect */}
             <span className="absolute inset-0 bg-white opacity-10 group-hover:opacity-20 transition"></span>
           </button>
         </form>
