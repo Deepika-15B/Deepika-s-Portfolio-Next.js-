@@ -1,12 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-  // ✅ ADD THIS FUNCTION HERE
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setSuccess(false);
 
     const formData = {
       name: e.target.name.value,
@@ -26,37 +30,36 @@ export default function Contact() {
       const data = await res.json();
 
       if (data.success) {
-        alert("Message sent successfully!");
+        setSuccess(true);
         e.target.reset();
-      } else {
-        alert("Failed to send message");
       }
     } catch (error) {
       console.error(error);
-      alert("Something went wrong");
     }
+
+    setLoading(false);
   };
 
   return (
     <section
       id="contact"
-      className="bg-gradient-to-b from-white via-purple-50 to-gray-50 py-24 px-6 md:px-12"
+      className="py-24 px-6 md:px-12 bg-gradient-to-b from-white via-purple-50 to-gray-50"
     >
       {/* Title */}
-      <h2 className="text-4xl font-bold text-center text-purple-700 mb-14">
+      <h2 className="text-4xl font-bold text-center mb-14 gradient-text">
         Contact Me
       </h2>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
         
-        {/* Left Side */}
+        {/* LEFT SIDE */}
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-gray-800">
             Let’s Connect
           </h3>
 
           <p className="text-gray-600">
-            I'm always excited to discuss new opportunities, collaborate on projects, or just have a chat about technology and development.
+            I'm always excited to discuss new opportunities, collaborate on projects, or just have a chat about technology.
           </p>
 
           <div className="space-y-4 text-gray-700">
@@ -82,17 +85,22 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Right Side - Form */}
-        {/* ✅ CONNECT HANDLESUBMIT HERE */}
+        {/* RIGHT SIDE - FORM */}
         <form
           onSubmit={handleSubmit}
-          className="relative bg-white/70 backdrop-blur-lg border border-white/30 rounded-2xl p-8 shadow-xl space-y-6"
+          className="glass shadow-xl p-8 space-y-6 relative"
         >
-          
+          {/* Success Message */}
+          {success && (
+            <div className="bg-green-100 text-green-700 px-4 py-2 rounded-lg text-sm">
+              ✅ Message sent successfully!
+            </div>
+          )}
+
           {/* Name */}
           <div className="relative">
             <input
-              name="name"   // ✅ IMPORTANT
+              name="name"
               type="text"
               required
               className="peer w-full border border-gray-300 rounded-lg p-3 pt-5 bg-transparent focus:outline-none focus:ring-2 focus:ring-purple-400"
@@ -107,7 +115,7 @@ export default function Contact() {
           {/* Email */}
           <div className="relative">
             <input
-              name="email"   // ✅ IMPORTANT
+              name="email"
               type="email"
               required
               className="peer w-full border border-gray-300 rounded-lg p-3 pt-5 bg-transparent focus:outline-none focus:ring-2 focus:ring-purple-400"
@@ -122,7 +130,7 @@ export default function Contact() {
           {/* Message */}
           <div className="relative">
             <textarea
-              name="message"   // ✅ IMPORTANT
+              name="message"
               rows="4"
               required
               className="peer w-full border border-gray-300 rounded-lg p-3 pt-5 bg-transparent focus:outline-none focus:ring-2 focus:ring-purple-400"
@@ -137,10 +145,10 @@ export default function Contact() {
           {/* Button */}
           <button
             type="submit"
-            className="w-full relative overflow-hidden bg-gradient-to-r from-purple-500 to-blue-500 text-white py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition duration-300 group"
+            disabled={loading}
+            className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white py-3 rounded-lg font-medium shadow-md hover-lift glow transition duration-300"
           >
-            <span className="relative z-10">Send Message</span>
-            <span className="absolute inset-0 bg-white opacity-10 group-hover:opacity-20 transition"></span>
+            {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>
