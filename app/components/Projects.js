@@ -1,8 +1,7 @@
 "use client";
 
-import { FaBrain, FaCarCrash } from "react-icons/fa";
+import { FaBrain, FaCarCrash, FaGithub } from "react-icons/fa";
 import { FaBook, FaBus } from "react-icons/fa6";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 export default function Projects() {
   const projects = [
@@ -11,7 +10,7 @@ export default function Projects() {
       description:
         "A smart system that analyzes hearing ability using digital signals and provides insights for better diagnosis.",
       icon: <FaBrain />,
-         image: "/projects/hearing.jpg",
+      image: "/projects/hearing.jpg",
       github: "https://github.com/Deepika-15B/HolisticHealthAnalyzer.git",
     },
     {
@@ -19,7 +18,7 @@ export default function Projects() {
       description:
         "Analyzes accident data to identify patterns, causes, and helps improve road safety using data analytics.",
       icon: <FaCarCrash />,
-         image: "/projects/powerbi.jpg",
+      image: "/projects/powerbi.jpg",
       github: "https://github.com/Deepika-15B/RoadAccidentAnalysis.git",
     },
     {
@@ -27,10 +26,10 @@ export default function Projects() {
       description:
         "Smart Traffic Solution ensures safe, efficient navigation with traffic analysis, route optimization, vehicle checks, and toll management.",
       icon: <FaBus />,
-         image: "/projects/map.jpg",
+      image: "/projects/map.jpg",
       github: "https://github.com/Deepika-15B/SmartTrafficSolutions.git",
     },
-     {
+    {
       title: "Learning Management System (SkillUp)",
       description:
         "A full-stack learning management system designed to facilitate online education and skill development.",
@@ -40,13 +39,13 @@ export default function Projects() {
     },
   ];
 
-   return (
+  return (
     <section
       id="projects"
-      className="bg-gradient-to-b from-gray-50 via-purple-50 to-white py-24 px-6 md:px-12"
+      className="py-24 px-6 md:px-12 bg-gradient-to-b from-gray-50 via-purple-50 to-white"
     >
       {/* Title */}
-      <h2 className="text-4xl font-bold text-center text-purple-700 mb-14">
+      <h2 className="text-4xl font-bold text-center mb-14 gradient-text">
         Projects
       </h2>
 
@@ -55,24 +54,38 @@ export default function Projects() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
+            className="glass overflow-hidden shadow-sm hover-lift transition duration-300"
           >
-            {/* Image */}
-            <div className="h-48 overflow-hidden">
+            {/* Image with Overlay */}
+            <div className="relative group h-48 overflow-hidden">
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover hover:scale-110 transition duration-300"
+                className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
               />
+
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                <span className="text-white text-sm">
+                  View Details
+                </span>
+              </div>
             </div>
 
             {/* Content */}
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                {project.title}
-              </h3>
+              {/* Icon + Title */}
+              <div className="flex items-center gap-3 mb-3">
+                <div className="text-purple-600 text-xl">
+                  {project.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {project.title}
+                </h3>
+              </div>
 
-              <p className="text-gray-600 text-sm mb-4">
+              {/* Description */}
+              <p className="text-gray-600 text-sm mb-5 leading-relaxed">
                 {project.description}
               </p>
 
@@ -81,12 +94,10 @@ export default function Projects() {
                 <a
                   href={project.github}
                   target="_blank"
-                  className="flex items-center gap-2 text-sm bg-gray-800 text-white px-3 py-2 rounded-lg hover:bg-black transition"
+                  className="flex items-center gap-2 text-sm bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-black transition hover-lift"
                 >
                   <FaGithub /> Code
                 </a>
-
-                
               </div>
             </div>
           </div>
