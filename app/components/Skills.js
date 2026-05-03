@@ -16,7 +16,6 @@ import {
   SiSpringboot
 } from "react-icons/si";
 
-// ✅ Correct VS Code icon import
 import { VscVscode } from "react-icons/vsc";
 
 export default function Skills() {
@@ -34,18 +33,16 @@ export default function Skills() {
     { name: "GitHub", level: 85, icon: <FaGithub /> },
 
     { name: "Spring Boot", level: 60, icon: <SiSpringboot /> },
-
-    // ✅ Fixed here
     { name: "VS Code", level: 80, icon: <VscVscode /> },
   ];
 
   return (
     <section
       id="skills"
-      className="bg-gradient-to-b from-white via-purple-50 to-gray-50 py-24 px-6 md:px-12"
+      className="py-24 px-6 md:px-12 bg-gradient-to-b from-white via-purple-50 to-gray-50"
     >
       {/* Title */}
-      <h2 className="text-4xl font-bold text-center text-purple-700 mb-14">
+      <h2 className="text-4xl font-bold text-center mb-14 gradient-text">
         Skills & Technologies
       </h2>
 
@@ -54,20 +51,22 @@ export default function Skills() {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300"
+            className="glass p-6 shadow-sm hover-lift transition duration-300"
           >
             {/* Icon + Name */}
-            <div className="flex items-center gap-3 mb-4 text-purple-600 text-xl">
-              {skill.icon}
+            <div className="flex items-center gap-3 mb-5 text-xl">
+              <div className="text-purple-600 text-2xl">
+                {skill.icon}
+              </div>
               <h3 className="font-semibold text-gray-800">
                 {skill.name}
               </h3>
             </div>
 
             {/* Progress Bar */}
-            <div className="w-full bg-gray-200 rounded-full h-2">
+            <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
               <div
-                className="h-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500"
+                className="h-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-1000 ease-out"
                 style={{ width: `${skill.level}%` }}
               ></div>
             </div>
