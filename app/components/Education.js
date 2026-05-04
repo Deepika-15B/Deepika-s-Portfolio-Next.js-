@@ -1,79 +1,96 @@
 export default function Education() {
   return (
-    <section id="education" className="section relative">
-      <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
+    <section id="education" className="py-20 px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
 
-      {/* Title */}
-      <div className="container-app relative">
+        {/* Title */}
         <div className="text-center mb-12">
-          <p className="chip inline-flex">Background</p>
-          <h2 className="text-4xl md:text-5xl font-semibold mt-4 tracking-tight">
-            Education &{" "}
-            <span className="gradient-text">Certifications</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Education & Certifications
           </h2>
-          <p className="mt-4 text-muted max-w-2xl mx-auto">
-            Where I learned, what I’m exploring, and the milestones I’m proud of.
+          <p className="mt-4 text-gray-600">
+            My academic background and certifications.
           </p>
         </div>
 
-      {/* EDUCATION TIMELINE */}
-      <div className="max-w-5xl mx-auto mb-16">
+        {/* EDUCATION */}
+        <div className="max-w-3xl mx-auto space-y-6 mb-16">
 
-        {/* Card 1 */}
-        <div className="card card-hover p-6 mb-6">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <h3 className="text-xl font-semibold text-slate-900">🎓 B.Tech IT</h3>
-              <p className="text-muted">Kongu Engineering College</p>
+          {/* Card 1 */}
+          <div className="border rounded-xl p-6 shadow-sm">
+            <div className="flex justify-between items-start">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  B.Tech Information Technology
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Kongu Engineering College
+                </p>
+              </div>
+              <span className="text-sm text-gray-500">
+                2023 - 2027
+              </span>
             </div>
-            <span className="chip text-xs px-2 py-1">2023 - 2027</span>
-          </div>
-          <p className="mt-3 text-emerald-700 font-semibold">
-            CGPA: 8.52 <span className="text-muted font-normal">(till 5th semester)</span>
-          </p>
-        </div>
 
-        {/* Card 2 */}
-        <div className="card card-hover p-6">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <h3 className="text-xl font-semibold text-slate-900">🏫 Higher Secondary</h3>
-              <p className="text-muted">Kalaimagal Kalvi Nilayam</p>
+            <p className="mt-3 text-sm text-gray-700 font-medium">
+              CGPA: 8.52
+            </p>
+          </div>
+
+          {/* Card 2 */}
+          <div className="border rounded-xl p-6 shadow-sm">
+            <div className="flex justify-between items-start">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  Higher Secondary Education
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Kalaimagal Kalvi Nilayam
+                </p>
+              </div>
+              <span className="text-sm text-gray-500">
+                2021 - 2023
+              </span>
             </div>
-            <span className="chip text-xs px-2 py-1">2021 - 2023</span>
+
+            <p className="mt-3 text-sm text-gray-700 font-medium">
+              Percentage: 92.5%
+            </p>
           </div>
-          <p className="mt-3 text-emerald-700 font-semibold">
-            Percentage: 92.5%
-          </p>
+
         </div>
 
-      </div>
+        {/* CERTIFICATIONS */}
+        <div className="grid md:grid-cols-3 gap-6">
 
-      {/* CERTIFICATIONS */}
-      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+          <div className="border rounded-xl p-6 shadow-sm">
+            <h3 className="font-semibold text-gray-900">
+              MongoDB Associate Developer
+            </h3>
+            <p className="text-gray-600 text-sm mt-1">
+              MongoDB University
+            </p>
+          </div>
 
-        {/* Card 1 */}
-        <div className="card card-hover p-6">
-          <h3 className="text-lg font-semibold text-slate-900">MongoDB Associate Developer</h3>
-          <p className="text-muted">MongoDB University</p>
-          <span className="chip mt-4">Database</span>
+          <div className="border rounded-xl p-6 shadow-sm">
+            <h3 className="font-semibold text-gray-900">
+              Database Management Systems
+            </h3>
+            <p className="text-gray-600 text-sm mt-1">
+              Infosys Springboard
+            </p>
+          </div>
+
+          <div className="border rounded-xl p-6 shadow-sm">
+            <h3 className="font-semibold text-gray-900">
+              Mobile App Development
+            </h3>
+            <p className="text-gray-600 text-sm mt-1">
+              ThingQbator
+            </p>
+          </div>
+
         </div>
-
-        {/* Card 2 */}
-        <div className="card card-hover p-6">
-          <h3 className="text-lg font-semibold text-slate-900">Database Management Systems</h3>
-          <p className="text-muted">Infosys Springboard</p>
-          <span className="chip mt-4">DBMS</span>
-        </div>
-
-        {/* Card 3 */}
-        <div className="card card-hover p-6">
-          <h3 className="text-lg font-semibold text-slate-900">Mobile App Development</h3>
-          <p className="text-muted">ThingQbator</p>
-          <span className="chip mt-4">App</span>
-        </div>
-
-      </div>
 
       </div>
     </section>
