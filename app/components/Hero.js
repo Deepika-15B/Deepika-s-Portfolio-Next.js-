@@ -7,52 +7,49 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28"
+      className="min-h-screen flex items-center pt-28 bg-white"
     >
-      {/* ambient background */}
-      <div className="pointer-events-none absolute inset-0 bg-grid opacity-35" />
-
-      {/* 🔥 Background Blobs */}
-      <div className="floaty absolute w-[22rem] h-[22rem] bg-purple-500/20 blur-3xl top-10 left-10 rounded-full" />
-      <div className="floaty2 absolute w-[24rem] h-[24rem] bg-blue-500/20 blur-3xl -bottom-10 right-0 rounded-full" />
-
-      <div className="container-app w-full grid md:grid-cols-2 gap-12 items-center">
-
+      <div className="max-w-6xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center">
+        
         {/* LEFT SIDE */}
         <div className="text-center md:text-left">
-
+          
           {/* Tag */}
           <div className="flex items-center justify-center md:justify-start gap-3 flex-wrap">
-            <span className="chip">B.Tech IT Student</span>
-            <span className="chip">Frontend Developer</span>
+            <span className="px-3 py-1 text-sm bg-blue-100 text-blue-600 rounded-full">
+              B.Tech IT Student
+            </span>
+            <span className="px-3 py-1 text-sm bg-gray-100 text-gray-600 rounded-full">
+              Frontend Developer
+            </span>
           </div>
 
-          {/* Name */}
-          <h1 className="text-5xl md:text-6xl font-semibold mt-6 leading-[1.05] tracking-tight">
-            Designing delightful{" "}
-            <span className="gradient-text">web experiences</span> with Next.js
+          {/* Heading */}
+          <h1 className="text-4xl md:text-6xl font-bold mt-6 leading-tight text-gray-900">
+            Building clean and modern{" "}
+            <span className="text-blue-600">web experiences</span>
           </h1>
 
           {/* Description */}
-          <p className="mt-6 text-muted leading-relaxed max-w-xl mx-auto md:mx-0">
-            Hi, I’m <span className="font-semibold text-slate-900">Deepika</span>. I
-            build modern, responsive interfaces with clean UI, smooth interactions,
-            and performance in mind.
+          <p className="mt-6 text-gray-600 max-w-xl mx-auto md:mx-0 leading-relaxed">
+            Hi, I’m <span className="font-semibold text-gray-900">Deepika</span>.  
+            I design and develop responsive web applications with a focus on
+            simplicity, performance, and great user experience.
           </p>
 
           {/* Buttons */}
           <div className="mt-8 flex gap-4 flex-wrap justify-center md:justify-start">
-
+            
             <a
               href="#projects"
-              className="btn-primary"
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
             >
               View Projects
             </a>
 
             <a
               href="#contact"
-              className="btn-secondary"
+              className="border px-6 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition"
             >
               Contact Me
             </a>
@@ -61,65 +58,63 @@ export default function Hero() {
 
         {/* RIGHT SIDE */}
         <div className="flex justify-center md:justify-end">
-          <div className="card card-hover p-6 md:p-8 w-full max-w-md">
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <p className="text-sm text-muted"></p>
-                <p className="text-lg font-semibold text-slate-900">
-                 
-                </p>
+          <div className="bg-white border rounded-2xl shadow-lg p-6 md:p-8 w-full max-w-sm">
+            
+            {/* Profile Info */}
+            <div className="text-center">
+              <div className="h-16 w-16 mx-auto rounded-full bg-blue-600 text-white flex items-center justify-center text-xl font-bold shadow-md">
+                D
               </div>
-              <div className="h-12 w-12 rounded-2xl bg-white/70 border border-slate-200/80 shadow-sm grid place-items-center">
-                
-              </div>
+
+              <h3 className="mt-4 text-lg font-semibold text-gray-900">
+                Deepika
+              </h3>
+
+              <p className="text-sm text-gray-500">
+                Frontend Developer
+              </p>
             </div>
 
-            <div className="mt-8 grid grid-cols-4 gap-4">
+            {/* Social Icons */}
+            <div className="mt-6 grid grid-cols-4 gap-4 justify-items-center">
+              
               <a
                 href="https://www.linkedin.com/in/deepika0510"
                 target="_blank"
                 rel="noreferrer"
-                className="glass h-14 w-14 flex items-center justify-center text-blue-600 hover-lift"
-                aria-label="LinkedIn"
+                className="h-12 w-12 flex items-center justify-center rounded-lg border text-blue-600 hover:bg-blue-50 transition"
               >
-                <FaLinkedin size={24} />
+                <FaLinkedin size={20} />
               </a>
 
               <a
                 href="https://github.com/Deepika-15B"
                 target="_blank"
                 rel="noreferrer"
-                className="glass h-14 w-14 flex items-center justify-center text-slate-900 hover-lift"
-                aria-label="GitHub"
+                className="h-12 w-12 flex items-center justify-center rounded-lg border text-gray-800 hover:bg-gray-100 transition"
               >
-                <FaGithub size={24} />
+                <FaGithub size={20} />
               </a>
 
               <a
                 href="https://leetcode.com/u/deepika_0510/"
                 target="_blank"
                 rel="noreferrer"
-                className="glass h-14 w-14 flex items-center justify-center text-amber-500 hover-lift"
-                aria-label="LeetCode"
+                className="h-12 w-12 flex items-center justify-center rounded-lg border text-amber-500 hover:bg-amber-50 transition"
               >
-                <SiLeetcode size={24} />
+                <SiLeetcode size={20} />
               </a>
 
               <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="glass h-14 w-14 flex items-center justify-center text-emerald-600 hover-lift"
-                aria-label="Resume"
+                className="h-12 w-12 flex items-center justify-center rounded-lg border text-green-600 hover:bg-green-50 transition"
               >
-                <FaFileAlt size={24} />
+                <FaFileAlt size={20} />
               </a>
             </div>
 
-            <div className="mt-8 flex items-center gap-3 text-sm text-muted">
-            
-        
-            </div>
           </div>
         </div>
       </div>
