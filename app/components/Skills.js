@@ -37,56 +37,51 @@ export default function Skills() {
   ];
 
   return (
-    <section
-      id="skills"
-      className="section relative"
-    >
-      <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
+    <section id="skills" className="py-20 px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
 
-      {/* Title */}
-      <div className="container-app relative">
-        <div className="text-center mb-14">
-          <p className="chip inline-flex">Toolkit</p>
-          <h2 className="text-4xl md:text-5xl font-semibold mt-4 tracking-tight">
-            Skills &{" "}
-            <span className="gradient-text">Technologies</span>
+        {/* Title */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Skills & Technologies
           </h2>
-          <p className="mt-4 text-muted max-w-2xl mx-auto">
-            A snapshot of what I use to design, build, and ship web projects.
+          <p className="mt-4 text-gray-600">
+            Technologies I use to build applications.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
-            <div key={index} className="card card-hover p-6">
-              <div className="flex items-start justify-between gap-4">
-                {/* Icon + Name */}
-                <div className="flex items-center gap-3 text-xl">
-                  <div className="text-purple-700 text-2xl">{skill.icon}</div>
-                  <h3 className="font-semibold text-slate-900">{skill.name}</h3>
+            <div key={index} className="border rounded-xl p-5 shadow-sm">
+              
+              {/* Top */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="text-xl text-gray-700">
+                    {skill.icon}
+                  </div>
+                  <h3 className="font-semibold text-gray-900">
+                    {skill.name}
+                  </h3>
                 </div>
-                <span className="chip text-xs px-2 py-1">{skill.level}%</span>
+                <span className="text-sm text-gray-500">
+                  {skill.level}%
+                </span>
               </div>
 
-              <div className="mt-6">
-                <div className="w-full bg-slate-200/70 rounded-full h-2 overflow-hidden">
-                  <div
-                    className="h-2 rounded-full transition-all duration-1000 ease-out"
-                    style={{
-                      width: `${skill.level}%`,
-                      background:
-                        "linear-gradient(90deg, rgba(124,58,237,1), rgba(59,130,246,1))",
-                    }}
-                  />
-                </div>
-                <p className="mt-3 text-sm text-muted">
-                  Comfort level: <span className="font-medium text-slate-900">{skill.level}%</span>
-                </p>
+              {/* Progress Bar */}
+              <div className="mt-4 w-full bg-gray-200 rounded-full h-2">
+                <div
+                  className="bg-blue-600 h-2 rounded-full"
+                  style={{ width: `${skill.level}%` }}
+                />
               </div>
+
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
