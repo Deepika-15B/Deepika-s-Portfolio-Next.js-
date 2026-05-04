@@ -39,44 +39,54 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-24 px-6 md:px-12 bg-gradient-to-b from-white via-purple-50 to-gray-50"
+      className="section relative"
     >
+      <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
+
       {/* Title */}
-      <h2 className="text-4xl font-bold text-center mb-14 gradient-text">
-        Skills & Technologies
-      </h2>
+      <div className="container-app relative">
+        <div className="text-center mb-14">
+          <p className="chip inline-flex">Toolkit</p>
+          <h2 className="text-4xl md:text-5xl font-semibold mt-4 tracking-tight">
+            Skills &{" "}
+            <span className="gradient-text">Technologies</span>
+          </h2>
+          <p className="mt-4 text-muted max-w-2xl mx-auto">
+            A snapshot of what I use to design, build, and ship web projects.
+          </p>
+        </div>
 
-      {/* Grid */}
-      <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className="glass p-6 shadow-sm hover-lift transition duration-300"
-          >
-            {/* Icon + Name */}
-            <div className="flex items-center gap-3 mb-5 text-xl">
-              <div className="text-purple-600 text-2xl">
-                {skill.icon}
+        {/* Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {skills.map((skill, index) => (
+            <div key={index} className="card card-hover p-6">
+              <div className="flex items-start justify-between gap-4">
+                {/* Icon + Name */}
+                <div className="flex items-center gap-3 text-xl">
+                  <div className="text-purple-700 text-2xl">{skill.icon}</div>
+                  <h3 className="font-semibold text-slate-900">{skill.name}</h3>
+                </div>
+                <span className="chip text-xs px-2 py-1">{skill.level}%</span>
               </div>
-              <h3 className="font-semibold text-gray-800">
-                {skill.name}
-              </h3>
-            </div>
 
-            {/* Progress Bar */}
-            <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-              <div
-                className="h-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-1000 ease-out"
-                style={{ width: `${skill.level}%` }}
-              ></div>
+              <div className="mt-6">
+                <div className="w-full bg-slate-200/70 rounded-full h-2 overflow-hidden">
+                  <div
+                    className="h-2 rounded-full transition-all duration-1000 ease-out"
+                    style={{
+                      width: `${skill.level}%`,
+                      background:
+                        "linear-gradient(90deg, rgba(124,58,237,1), rgba(59,130,246,1))",
+                    }}
+                  />
+                </div>
+                <p className="mt-3 text-sm text-muted">
+                  Comfort level: <span className="font-medium text-slate-900">{skill.level}%</span>
+                </p>
+              </div>
             </div>
-
-            {/* Percentage */}
-            <p className="text-right text-sm text-gray-500 mt-2">
-              {skill.level}%
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

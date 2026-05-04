@@ -5,38 +5,39 @@ import { SiLeetcode } from "react-icons/si";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+    <section
+      id="top"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28"
+    >
+      {/* ambient background */}
+      <div className="pointer-events-none absolute inset-0 bg-grid opacity-35" />
 
       {/* 🔥 Background Blobs */}
-      <div className="absolute w-72 h-72 bg-purple-400 opacity-20 blur-3xl top-10 left-10 rounded-full"></div>
-      <div className="absolute w-72 h-72 bg-blue-400 opacity-20 blur-3xl bottom-10 right-10 rounded-full"></div>
+      <div className="floaty absolute w-[22rem] h-[22rem] bg-purple-500/20 blur-3xl top-10 left-10 rounded-full" />
+      <div className="floaty2 absolute w-[24rem] h-[24rem] bg-blue-500/20 blur-3xl -bottom-10 right-0 rounded-full" />
 
-      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+      <div className="container-app w-full grid md:grid-cols-2 gap-12 items-center">
 
         {/* LEFT SIDE */}
         <div className="text-center md:text-left">
 
           {/* Tag */}
-          <span className="inline-block bg-purple-100 text-purple-700 px-4 py-1 rounded-full text-sm font-medium">
-            🎓 B.Tech IT Student
-          </span>
+          <div className="flex items-center justify-center md:justify-start gap-3 flex-wrap">
+            <span className="chip">B.Tech IT Student</span>
+            <span className="chip">Frontend Developer</span>
+          </div>
 
           {/* Name */}
-          <h1 className="text-5xl md:text-6xl font-bold mt-6 leading-tight">
-            Hello, I'm{" "}
-            <span className="gradient-text">Deepika</span>
+          <h1 className="text-5xl md:text-6xl font-semibold mt-6 leading-[1.05] tracking-tight">
+            Designing delightful{" "}
+            <span className="gradient-text">web experiences</span> with Next.js
           </h1>
 
-          {/* Role */}
-          <h2 className="text-2xl mt-4 text-gray-600">
-            Frontend Developer
-          </h2>
-
           {/* Description */}
-          <p className="mt-6 text-gray-500 leading-relaxed max-w-xl">
-            Passionate about technology and innovation. Currently pursuing 
-            B.Tech in IT with strong skills in building modern, scalable, 
-            and user-friendly web applications.
+          <p className="mt-6 text-muted leading-relaxed max-w-xl mx-auto md:mx-0">
+            Hi, I’m <span className="font-semibold text-slate-900">Deepika</span>. I
+            build modern, responsive interfaces with clean UI, smooth interactions,
+            and performance in mind.
           </p>
 
           {/* Buttons */}
@@ -44,60 +45,82 @@ export default function Hero() {
 
             <a
               href="#projects"
-              className="px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 text-white hover-lift glow"
+              className="btn-primary"
             >
-              🚀 View Projects
+              View Projects
             </a>
 
             <a
               href="#contact"
-              className="px-6 py-3 rounded-lg border border-gray-300 hover:bg-gray-100 transition"
+              className="btn-secondary"
             >
-              ✉️ Contact Me
+              Contact Me
             </a>
           </div>
         </div>
 
-        {/* RIGHT SIDE - ICONS (Glass Style) */}
-        <div className="flex justify-center gap-6 flex-wrap">
-
-          {/* LinkedIn */}
-          <a
-            href="https://www.linkedin.com/in/deepika0510"
-            target="_blank"
-          >
-            <div className="glass w-16 h-16 flex items-center justify-center text-blue-600 hover-lift">
-              <FaLinkedin size={26} />
+        {/* RIGHT SIDE */}
+        <div className="flex justify-center md:justify-end">
+          <div className="card card-hover p-6 md:p-8 w-full max-w-md">
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <p className="text-sm text-muted"></p>
+                <p className="text-lg font-semibold text-slate-900">
+                 
+                </p>
+              </div>
+              <div className="h-12 w-12 rounded-2xl bg-white/70 border border-slate-200/80 shadow-sm grid place-items-center">
+                
+              </div>
             </div>
-          </a>
 
-          {/* GitHub */}
-          <a
-            href="https://github.com/Deepika-15B"
-            target="_blank"
-          >
-            <div className="glass w-16 h-16 flex items-center justify-center text-gray-800 hover-lift">
-              <FaGithub size={26} />
+            <div className="mt-8 grid grid-cols-4 gap-4">
+              <a
+                href="https://www.linkedin.com/in/deepika0510"
+                target="_blank"
+                rel="noreferrer"
+                className="glass h-14 w-14 flex items-center justify-center text-blue-600 hover-lift"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin size={24} />
+              </a>
+
+              <a
+                href="https://github.com/Deepika-15B"
+                target="_blank"
+                rel="noreferrer"
+                className="glass h-14 w-14 flex items-center justify-center text-slate-900 hover-lift"
+                aria-label="GitHub"
+              >
+                <FaGithub size={24} />
+              </a>
+
+              <a
+                href="https://leetcode.com/u/deepika_0510/"
+                target="_blank"
+                rel="noreferrer"
+                className="glass h-14 w-14 flex items-center justify-center text-amber-500 hover-lift"
+                aria-label="LeetCode"
+              >
+                <SiLeetcode size={24} />
+              </a>
+
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="glass h-14 w-14 flex items-center justify-center text-emerald-600 hover-lift"
+                aria-label="Resume"
+              >
+                <FaFileAlt size={24} />
+              </a>
             </div>
-          </a>
 
-          {/* LeetCode */}
-          <a
-            href="https://leetcode.com/u/deepika_0510/"
-            target="_blank"
-          >
-            <div className="glass w-16 h-16 flex items-center justify-center text-yellow-500 hover-lift">
-              <SiLeetcode size={26} />
+            <div className="mt-8 flex items-center gap-3 text-sm text-muted">
+            
+        
             </div>
-          </a>
-
-          {/* Resume */}
-          <a href="/resume.pdf" target="_blank">
-            <div className="glass w-16 h-16 flex items-center justify-center text-green-600 hover-lift">
-              <FaFileAlt size={26} />
-            </div>
-          </a>
-
+          </div>
         </div>
       </div>
     </section>

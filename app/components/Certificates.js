@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Certificates() {
   const certificates = [
@@ -24,25 +25,41 @@ export default function Certificates() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 via-white to-purple-50 text-gray-900 py-20 px-6">
+    <section className="section relative">
+      <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
 
-      <h2 className="text-3xl font-bold text-center mb-10 text-purple-700">
-        Certificate Gallery
-      </h2>
+      <div className="container-app relative">
+        <div className="text-center mb-10">
+          <p className="chip inline-flex">Highlights</p>
+          <h2 className="text-4xl md:text-5xl font-semibold mt-4 tracking-tight">
+            Certificate{" "}
+            <span className="gradient-text">Gallery</span>
+          </h2>
+          <p className="mt-4 text-muted max-w-2xl mx-auto">
+            Swipe through a few learning milestones and course achievements.
+          </p>
+        </div>
 
       <div className="max-w-5xl mx-auto relative">
 
         {/* Image */}
-        <img
-          src={certificates[index]}
-          alt="certificate"
-          className="w-full h-[600px] md:h-[700px] object-cover rounded-2xl border border-gray-200 shadow-md"
-        />
+        <div className="relative w-full h-[420px] sm:h-[520px] md:h-[640px] overflow-hidden rounded-2xl border border-slate-200 shadow-xl">
+          <Image
+            key={certificates[index]}
+            src={certificates[index]}
+            alt="certificate"
+            fill
+            sizes="(max-width: 1024px) 100vw, 900px"
+            className="object-cover"
+            priority={false}
+          />
+        </div>
 
         {/* Left Button */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white border border-gray-300 p-3 rounded-full shadow-md hover:bg-purple-100 transition"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 btn-secondary h-11 w-11 p-0 rounded-full shadow-md"
+          aria-label="Previous certificate"
         >
           ◀
         </button>
@@ -50,13 +67,30 @@ export default function Certificates() {
         {/* Right Button */}
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white border border-gray-300 p-3 rounded-full shadow-md hover:bg-purple-100 transition"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 btn-secondary h-11 w-11 p-0 rounded-full shadow-md"
+          aria-label="Next certificate"
         >
           ▶
         </button>
 
       </div>
 
+      <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted">
+        {certificates.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            aria-label={`Go to certificate ${i + 1}`}
+            onClick={() => setIndex(i)}
+            className={[
+              "h-2.5 w-2.5 rounded-full transition",
+              i === index ? "bg-slate-900" : "bg-slate-300 hover:bg-slate-400",
+            ].join(" ")}
+          />
+        ))}
+      </div>
+
+      </div>
     </section>
   );
 }

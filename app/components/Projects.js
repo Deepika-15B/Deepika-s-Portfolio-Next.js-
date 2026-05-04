@@ -2,6 +2,7 @@
 
 import { FaBrain, FaCarCrash, FaGithub } from "react-icons/fa";
 import { FaBook, FaBus } from "react-icons/fa6";
+import Image from "next/image";
 
 export default function Projects() {
   const projects = [
@@ -42,66 +43,71 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-24 px-6 md:px-12 bg-gradient-to-b from-gray-50 via-purple-50 to-white"
+      className="section relative"
     >
+      <div className="pointer-events-none absolute inset-0 bg-grid opacity-25" />
+
       {/* Title */}
-      <h2 className="text-4xl font-bold text-center mb-14 gradient-text">
-        Projects
-      </h2>
+      <div className="container-app relative">
+        <div className="text-center mb-14">
+          <p className="chip inline-flex">Selected work</p>
+          <h2 className="text-4xl md:text-5xl font-semibold mt-4 tracking-tight">
+            Projects that{" "}
+            <span className="gradient-text">tell a story</span>
+          </h2>
+          <p className="mt-4 text-muted max-w-2xl mx-auto">
+            A few things I’ve built recently—focused on usability, clarity, and clean
+            implementation.
+          </p>
+        </div>
 
-      {/* Grid */}
-      <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="glass overflow-hidden shadow-sm hover-lift transition duration-300"
-          >
-            {/* Image with Overlay */}
-            <div className="relative group h-48 overflow-hidden">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-              />
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                <span className="text-white text-sm">
-                  View Details
-                </span>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="p-6">
-              {/* Icon + Title */}
-              <div className="flex items-center gap-3 mb-3">
-                <div className="text-purple-600 text-xl">
-                  {project.icon}
+        {/* Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div key={index} className="card card-hover overflow-hidden">
+              {/* Image */}
+              <div className="relative group h-48 overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover transition duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/0 to-slate-950/0 opacity-100" />
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                  <span className="chip bg-white/70 border-slate-200/70 text-slate-800">
+                    {project.title}
+                  </span>
+                  <span className="h-10 w-10 rounded-xl bg-white/75 border border-slate-200/70 grid place-items-center text-purple-700">
+                    {project.icon}
+                  </span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800">
-                  {project.title}
-                </h3>
               </div>
 
-              {/* Description */}
-              <p className="text-gray-600 text-sm mb-5 leading-relaxed">
-                {project.description}
-              </p>
+              {/* Content */}
+              <div className="p-6">
+                <p className="text-muted text-sm leading-relaxed">
+                  {project.description}
+                </p>
 
-              {/* Buttons */}
-              <div className="flex gap-3">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  className="flex items-center gap-2 text-sm bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-black transition hover-lift"
-                >
-                  <FaGithub /> Code
-                </a>
+                <div className="mt-6 flex items-center justify-between">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-secondary px-4 py-2 text-sm"
+                  >
+                    <FaGithub /> Code
+                  </a>
+                  <a href="#contact" className="text-sm font-medium gradient-text">
+                    Let’s build one →
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
