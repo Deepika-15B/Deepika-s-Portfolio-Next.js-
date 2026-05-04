@@ -41,134 +41,91 @@ export default function Contact() {
   };
 
   return (
-    <section
-      id="contact"
-      className="section relative"
-    >
-      <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
+    <section id="contact" className="py-20 px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
 
-      <div className="container-app relative">
-        <div className="text-center mb-14">
-          <p className="chip inline-flex">Say hello</p>
-          <h2 className="text-4xl md:text-5xl font-semibold mt-4 tracking-tight">
-            Contact{" "}
-            <span className="gradient-text">Me</span>
+        {/* Title */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Contact Me
           </h2>
-          <p className="mt-4 text-muted max-w-2xl mx-auto">
-            Have an idea, opportunity, or feedback? I’m happy to chat.
+          <p className="mt-4 text-gray-600">
+            Feel free to reach out for opportunities or collaboration.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-        
+        <div className="grid md:grid-cols-2 gap-10">
+
           {/* LEFT SIDE */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-slate-900">
-              Let’s Connect
+          <div className="space-y-5">
+            <h3 className="text-xl font-semibold text-gray-900">
+              Get in touch
             </h3>
 
-            <p className="text-muted">
-              I’m always excited to discuss new opportunities, collaborate on projects,
-              or just have a chat about technology.
+            <p className="text-gray-600">
+              I am open to discussing new projects, ideas, or opportunities.
             </p>
 
-            <div className="space-y-4 text-slate-700">
+            <div className="space-y-3 text-gray-700">
               <p className="flex items-center gap-3">
-                <FaEnvelope className="text-purple-700" />
-                <span className="text-muted">baladeepika0510@gmail.com</span>
+                <FaEnvelope /> baladeepika0510@gmail.com
               </p>
-
               <p className="flex items-center gap-3">
-                <FaPhoneAlt className="text-purple-700" />
-                <span className="text-muted">+91 9489385754</span>
+                <FaPhoneAlt /> +91 9489385754
               </p>
-
               <p className="flex items-center gap-3">
-                <FaLinkedin className="text-purple-700" />
-                <span className="text-muted">linkedin.com/in/deepika0510</span>
+                <FaLinkedin /> linkedin.com/in/deepika0510
               </p>
-
               <p className="flex items-center gap-3">
-                <FaGithub className="text-purple-700" />
-                <span className="text-muted">github.com/Deepika-15B</span>
+                <FaGithub /> github.com/Deepika-15B
               </p>
-            </div>
-
-            <div className="card p-6">
-              <p className="text-sm text-muted">Quick note</p>
-              <p className="mt-2 text-slate-900 font-medium">
-                I reply fastest on email and LinkedIn.
-              </p>
-              <div className="mt-4 flex gap-3 flex-wrap">
-                <a className="btn-secondary px-4 py-2 text-sm" href="#projects">
-                  See work
-                </a>
-                <a className="btn-primary px-4 py-2 text-sm" href="#top">
-                  Back to top
-                </a>
-              </div>
             </div>
           </div>
 
           {/* RIGHT SIDE - FORM */}
-          <form onSubmit={handleSubmit} className="card shadow-xl p-8 space-y-6 relative">
-            {/* Success Message */}
+          <form
+            onSubmit={handleSubmit}
+            className="border rounded-xl p-6 space-y-4 shadow-sm"
+          >
             {success && (
-              <div className="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-lg text-sm">
+              <p className="text-green-600 text-sm">
                 Message sent successfully!
-              </div>
+              </p>
             )}
 
-            {/* Name */}
-            <div className="relative">
-              <input
-                name="name"
-                type="text"
-                required
-                className="peer w-full border border-slate-300/80 rounded-xl p-3 pt-5 bg-white/40 focus:outline-none focus:ring-2 focus:ring-purple-400"
-              />
-              <label className="absolute left-3 top-2 text-slate-500 text-sm transition-all 
-                peer-focus:text-purple-700 peer-focus:top-1 peer-focus:text-xs
-                peer-valid:top-1 peer-valid:text-xs">
-                Your Name
-              </label>
-            </div>
+            <input
+              name="name"
+              type="text"
+              placeholder="Your Name"
+              required
+              className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
 
-            {/* Email */}
-            <div className="relative">
-              <input
-                name="email"
-                type="email"
-                required
-                className="peer w-full border border-slate-300/80 rounded-xl p-3 pt-5 bg-white/40 focus:outline-none focus:ring-2 focus:ring-purple-400"
-              />
-              <label className="absolute left-3 top-2 text-slate-500 text-sm transition-all 
-                peer-focus:text-purple-700 peer-focus:top-1 peer-focus:text-xs
-                peer-valid:top-1 peer-valid:text-xs">
-                Your Email
-              </label>
-            </div>
+            <input
+              name="email"
+              type="email"
+              placeholder="Your Email"
+              required
+              className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
 
-            {/* Message */}
-            <div className="relative">
-              <textarea
-                name="message"
-                rows="4"
-                required
-                className="peer w-full border border-slate-300/80 rounded-xl p-3 pt-5 bg-white/40 focus:outline-none focus:ring-2 focus:ring-purple-400"
-              />
-              <label className="absolute left-3 top-2 text-slate-500 text-sm transition-all 
-                peer-focus:text-purple-700 peer-focus:top-1 peer-focus:text-xs
-                peer-valid:top-1 peer-valid:text-xs">
-                Your Message
-              </label>
-            </div>
+            <textarea
+              name="message"
+              rows="4"
+              placeholder="Your Message"
+              required
+              className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
 
-            {/* Button */}
-            <button type="submit" disabled={loading} className="w-full btn-primary">
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+            >
               {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
+
         </div>
       </div>
     </section>
