@@ -6,7 +6,7 @@ import Certificates from "./components/Certificates";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contacts from "./components/Contacts";
-
+import Footer from "./components/Footer";
 export default function Home() {
   return (
     <main>
@@ -18,6 +18,7 @@ export default function Home() {
       <Skills/>
       <Projects />
       <Contacts />
+       <Footer /> 
     </main>
   );
 }

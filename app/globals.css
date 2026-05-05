@@ -37,6 +37,11 @@ html {
     outline: 2px solid rgba(var(--ring) / 0.5);
     outline-offset: 3px;
   }
+
+  /* Prevent fixed navbar from hiding anchored sections */
+  section[id] {
+    scroll-margin-top: 96px;
+  }
 }
 
 /* Glass Card */
@@ -69,11 +74,11 @@ html {
 
 @layer components {
   .container-app {
-    @apply max-w-6xl mx-auto px-6 md:px-12;
+    @apply max-w-6xl mx-auto px-4 sm:px-6 md:px-12;
   }
 
   .section {
-    @apply py-24;
+    @apply py-16 sm:py-20 lg:py-24;
   }
 
   .card {

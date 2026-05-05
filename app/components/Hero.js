@@ -7,31 +7,27 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="min-h-screen flex items-center pt-28 bg-white"
+      className="min-h-[calc(100vh-72px)] flex items-center pt-24 sm:pt-28 pb-10"
     >
-      <div className="max-w-6xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center">
+      <div className="container-app w-full grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
         
         {/* LEFT SIDE */}
         <div className="text-center md:text-left">
           
           {/* Tag */}
           <div className="flex items-center justify-center md:justify-start gap-3 flex-wrap">
-            <span className="px-3 py-1 text-sm bg-blue-100 text-blue-600 rounded-full">
-              B.Tech IT Student
-            </span>
-            <span className="px-3 py-1 text-sm bg-gray-100 text-gray-600 rounded-full">
-              Frontend Developer
-            </span>
+            <span className="chip">B.Tech IT Student</span>
+            <span className="chip">Full-Stack Developer</span>
           </div>
 
           {/* Heading */}
-          <h1 className="text-4xl md:text-6xl font-bold mt-6 leading-tight text-gray-900">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mt-6 leading-tight text-gray-900">
             Building clean and modern{" "}
             <span className="text-blue-600">web experiences</span>
           </h1>
 
           {/* Description */}
-          <p className="mt-6 text-gray-600 max-w-xl mx-auto md:mx-0 leading-relaxed">
+          <p className="mt-6 text-muted max-w-xl mx-auto md:mx-0 leading-relaxed">
             Hi, I’m <span className="font-semibold text-gray-900">Deepika</span>.  
             I design and develop responsive web applications with a focus on
             simplicity, performance, and great user experience.
@@ -42,14 +38,14 @@ export default function Hero() {
             
             <a
               href="#projects"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
+              className="btn-primary w-full sm:w-auto"
             >
               View Projects
             </a>
 
             <a
               href="#contact"
-              className="border px-6 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition"
+              className="btn-secondary w-full sm:w-auto"
             >
               Contact Me
             </a>
@@ -58,7 +54,7 @@ export default function Hero() {
 
         {/* RIGHT SIDE */}
         <div className="flex justify-center md:justify-end">
-          <div className="bg-white border rounded-2xl shadow-lg p-6 md:p-8 w-full max-w-sm">
+          <div className="card card-hover p-6 md:p-8 w-full max-w-sm">
             
             {/* Profile Info */}
             <div className="text-center">
