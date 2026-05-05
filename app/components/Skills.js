@@ -32,7 +32,7 @@ export default function Skills() {
     { name: "Power BI", level: 80, icon: <FaChartBar /> },
     { name: "GitHub", level: 85, icon: <FaGithub /> },
 
-    { name: "Spring Boot", level: 60, icon: <SiSpringboot /> },
+    { name: "Spring Boot", level: 40, icon: <SiSpringboot /> },
     { name: "VS Code", level: 80, icon: <VscVscode /> },
   ];
 
