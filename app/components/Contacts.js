@@ -47,7 +47,7 @@ export default function Contact() {
 
         {/* Title */}
         <div className="text-center mb-12">
-          <p className="chip inline-flex">Say hello</p>
+       
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-4">
             Contact Me
           </h2>
