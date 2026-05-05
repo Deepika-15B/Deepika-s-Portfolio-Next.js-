@@ -22,13 +22,13 @@ export default function Skills() {
   const skills = [
     { name: "Python", level: 50, icon: <FaPython /> },
     { name: "Java", level: 80, icon: <FaJava /> },
-    { name: "C Programming", level: 75, icon: <FaCode /> },
+    { name: "C Programming", level: 65, icon: <FaCode /> },
 
-    { name: "HTML5", level: 80, icon: <SiHtml5 /> },
-    { name: "CSS3", level: 80, icon: <FaCss3Alt /> },
+    { name: "HTML5", level: 65, icon: <SiHtml5 /> },
+    { name: "CSS3", level: 70, icon: <FaCss3Alt /> },
     { name: "Bootstrap", level: 60, icon: <SiBootstrap /> },
 
-    { name: "MongoDB", level: 70, icon: <SiMongodb /> },
+    { name: "MongoDB", level: 50, icon: <SiMongodb /> },
     { name: "Power BI", level: 80, icon: <FaChartBar /> },
     { name: "GitHub", level: 85, icon: <FaGithub /> },
 
