@@ -8,6 +8,7 @@ export default function Certificates() {
     "/cert1.jpg",
     "/cert2.jpg",
     "/cert3.jpg",
+    "/cert4.jpg",
   ];
 
   const [index, setIndex] = useState(0);

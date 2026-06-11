@@ -23,15 +23,15 @@ export default function Skills() {
     { name: "Python", level: 50, icon: <FaPython /> },
     { name: "Java", level: 80, icon: <FaJava /> },
     { name: "C Programming", level: 65, icon: <FaCode /> },
-
     { name: "HTML5", level: 65, icon: <SiHtml5 /> },
     { name: "CSS3", level: 70, icon: <FaCss3Alt /> },
+    { name: "ReactJS", level: 60, icon: <FaGithub /> },
     { name: "Bootstrap", level: 60, icon: <SiBootstrap /> },
-
     { name: "MongoDB", level: 50, icon: <SiMongodb /> },
+    { name: "MySQL", level: 50, icon: <FaGithub /> },
+    { name: "Firebase", level: 60, icon: <FaGithub /> },
     { name: "Power BI", level: 80, icon: <FaChartBar /> },
-    { name: "GitHub", level: 85, icon: <FaGithub /> },
-
+    { name: "GitHub", level: 80, icon: <FaGithub /> },
     { name: "Spring Boot", level: 40, icon: <SiSpringboot /> },
     { name: "VS Code", level: 80, icon: <VscVscode /> },
   ];

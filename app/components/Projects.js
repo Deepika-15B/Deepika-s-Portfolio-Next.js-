@@ -27,6 +27,13 @@ export default function Projects() {
       github: "https://github.com/Deepika-15B/SmartTrafficSolutions.git",
     },
     {
+      title: "Blogging Platform",
+      description:
+        "A full-stack blogging platform that enables users to create, edit,  manage, and share blog posts through an intuitive and responsive interface.",
+      image: "/projects/blog.jpg",
+      github: "https://github.com/Deepika-15B/Bloggingplatform.git",
+    },
+    {
       title: "Learning Management System",
       description:
         "A web-based system designed to support online learning and skill development.",
