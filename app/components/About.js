@@ -49,7 +49,7 @@ export default function About() {
               DBMS
             </span>
             <span className="px-3 py-1 text-sm bg-gray-100 rounded-full">
-              OOP
+              Object Oriented Programming
             </span>
             <span className="px-3 py-1 text-sm bg-gray-100 rounded-full">
               App Development

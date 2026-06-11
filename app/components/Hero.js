@@ -17,7 +17,7 @@ export default function Hero() {
           {/* Tag */}
           <div className="flex items-center justify-center md:justify-start gap-3 flex-wrap">
             <span className="chip">B.Tech IT Student</span>
-            <span className="chip">Full-Stack Developer</span>
+            <span className="chip">Frontend Developer</span>
           </div>
 
           {/* Heading */}
