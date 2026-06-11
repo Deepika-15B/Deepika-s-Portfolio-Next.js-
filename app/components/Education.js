@@ -83,6 +83,15 @@ export default function Education() {
 
           <div className="border rounded-xl p-6 shadow-sm">
             <h3 className="font-semibold text-gray-900">
+              Java SE 17 Developer
+            </h3>
+            <p className="text-gray-600 text-sm mt-1">
+              Oracle
+            </p>
+          </div>
+
+          <div className="border rounded-xl p-6 shadow-sm">
+            <h3 className="font-semibold text-gray-900">
               Mobile App Development
             </h3>
             <p className="text-gray-600 text-sm mt-1">
